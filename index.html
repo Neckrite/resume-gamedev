@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Резюме — Инченко Никита Вадимович, инженер-программист (специализация GameDev): Unity 6 / C#, Blender, Audacity / FL Studio.">
+<title>Инченко Никита Вадимович — Инженер-программист (GameDev)</title>
+<style>
+  :root{
+    --ink:#0f172a;
+    --muted:#55637a;
+    --line:#e2e8f0;
+    --accent:#1d4ed8;
+    --accent-soft:#eff4ff;
+    --chip:#f1f5f9;
+    --card:#ffffff;
+    --bg:#f6f8fb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Segoe UI","Inter",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);
+    line-height:1.55;font-size:15px;
+  }
+  .sheet{
+    max-width:900px;margin:28px auto;background:var(--card);
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    box-shadow:0 10px 30px rgba(15,23,42,.07);
+  }
+  /* ---------- Header ---------- */
+  header{
+    background:linear-gradient(120deg,#0f172a 0%,#16264a 55%,#1d3a7a 100%);
+    color:#fff;padding:34px 40px 30px;
+  }
+  .role-line{
+    display:inline-block;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:#9dc0ff;border:1px solid rgba(157,192,255,.45);border-radius:999px;
+    padding:4px 14px;margin-bottom:14px;background:rgba(29,78,216,.18);
+  }
+  h1{font-size:31px;font-weight:700;letter-spacing:.2px}
+  .tagline{margin-top:8px;font-size:16px;color:#c7d5f2;max-width:640px}
+  .contact-row{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:14px;color:#e6edfb}
+  .contact-row a{color:#9dc0ff;text-decoration:none;border-bottom:1px dotted rgba(157,192,255,.6)}
+  .contact-row .dot{color:#5f74a3}
+  /* ---------- Layout ---------- */
+  .grid{display:grid;grid-template-columns:1fr 300px;gap:0}
+  main{padding:30px 36px 36px;border-right:1px solid var(--line)}
+  aside{padding:30px 30px 36px;background:#fbfcfe}
+  section{margin-bottom:30px}
+  section:last-child{margin-bottom:0}
+  h2{
+    font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
+    display:flex;align-items:center;gap:10px;margin-bottom:16px;
+  }
+  h2::after{content:"";flex:1;height:1px;background:var(--line)}
+  /* ---------- Projects ---------- */
+  .project{padding-left:18px;border-left:2px solid var(--accent-soft);margin-bottom:22px;position:relative}
+  .project:last-child{margin-bottom:0}
+  .project::before{
+    content:"";position:absolute;left:-6px;top:6px;width:10px;height:10px;border-radius:50%;
+    background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);
+  }
+  .project h3{font-size:16.5px;font-weight:600}
+  .proj-meta{font-size:12.5px;color:var(--muted);margin:2px 0 8px}
+  .project ul{margin:0;padding-left:18px}
+  .project li{margin-bottom:4px}
+  .stack{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
+  .chip{
+    font-size:11.5px;background:var(--chip);border:1px solid var(--line);
+    border-radius:999px;padding:2px 10px;color:#334155;white-space:nowrap;
+  }
+  /* ---------- Summary ---------- */
+  .summary p{margin-bottom:8px}
+  /* ---------- Sidebar ---------- */
+  .side-block{margin-bottom:26px}
+  .side-block:last-child{margin-bottom:0}
+  .side-block h2{margin-bottom:12px}
+  .edu{font-size:14px}
+  .edu b{display:block;font-size:14.5px;line-height:1.4}
+  .edu .meta{color:var(--muted);font-size:13px;margin-top:4px}
+  .skills{display:flex;flex-wrap:wrap;gap:6px}
+  .skill-group{margin-bottom:12px}
+  .skill-group:last-child{margin-bottom:0}
+  .skill-group b{display:block;font-size:13px;margin-bottom:6px;color:#1e293b}
+  .lang-row{display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px dashed var(--line)}
+  .lang-row:last-child{border-bottom:none}
+  .lang-row span:last-child{color:var(--muted)}
+  .note{font-size:12.5px;color:var(--muted);margin-top:8px}
+  footer{
+    border-top:1px solid var(--line);padding:14px 40px;font-size:12px;color:var(--muted);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;background:#fbfcfe;
+  }
+  a{color:var(--accent)}
+  /* ---------- Responsive ---------- */
+  @media (max-width:760px){
+    .grid{grid-template-columns:1fr}
+    main{border-right:none;border-bottom:1px solid var(--line)}
+    header{padding:28px 24px}
+    main,aside{padding:24px}
+    .sheet{margin:12px;border-radius:10px}
+    h1{font-size:25px}
+  }
+  /* ---------- Print ---------- */
+  @page{size:A4;margin:0}
+  @media print{
+    body{background:#fff}
+    .sheet{max-width:none;margin:0;border:none;border-radius:0;box-shadow:none}
+    header{background:#0f172a !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    section{page-break-inside:avoid}
+    footer{display:none}
+    .project,section{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header>
+    <span class="role-line">Инженер-программист · GameDev</span>
+    <h1>Инченко Никита Вадимович</h1>
+    <p class="tagline">Разработчик игр на Unity: геймплей-программирование на C#, 3D-контент в Blender,
+    звук для игр в Audacity и FL Studio, веб-игры на чистом JavaScript. Люблю доводить проекты от идеи до работающей сборки.</p>
+    <div class="contact-row">
+      <span>Полоцк, Беларусь</span>
+      <span class="dot">•</span>
+      <a href="https://github.com/Neckrite">github.com/Neckrite</a>
+    </div>
+  </header>
+
+  <div class="grid">
+    <main>
+
+      <section class="summary">
+        <h2>О себе</h2>
+        <p>Студент 4 курса факультета информационных технологий Полоцкого государственного
+        университета (группа 23-СТ). Специализируюсь на разработке игр: пишу геймплей на C# под Unity 6,
+        самостоятельно создаю 3D-модели и звук — от модели мельницы в Blender до саундтрека в FL Studio.</p>
+        <p>Помимо Unity, пишу полноценные игры на чистом JavaScript (HTML5 Canvas, Web Audio API) — без движка и внешних библиотек.</p>
+        <p>Есть опыт автоматизации сборки Unity-проектов через CLI (headless-сборка WebGL),
+        работы с Git по веточной модели с Pull Request и код-ревью.</p>
+      </section>
+
+      <section>
+        <h2>Проекты</h2>
+
+        <div class="project">
+          <h3>«Ветряная долина» — интерактивная 3D-сцена</h3>
+          <div class="proj-meta">Unity 6 (URP) · C# · Blender — учебный проект, 2026</div>
+          <ul>
+            <li>Полный цикл производства: модели мельницы, ландшафта и птиц созданы в Blender и импортированы в движок.</li>
+            <li>Цикл «день/ночь»: вращение солнца и луны, динамическое освещение и анимация параметров скайбокса (цвет, атмосферность).</li>
+            <li>Система птиц: спавнер со случайными интервалами и маршрутами на корутинах, полёт по вейпоинтам с плавным доворотом (Quaternion.Slerp).</li>
+            <li>Интерактивная мельница: при нажатии E в триггер-зоне лопасти плавно замедляются и возвращаются к обычной скорости (Animator, MoveTowards).</li>
+            <li>Камера от первого лица: CharacterController, движение и обзор мышью, гравитация.</li>
+          </ul>
+          <div class="stack">
+            <span class="chip">C#</span><span class="chip">Unity 6 / URP</span>
+            <span class="chip">CharacterController</span><span class="chip">Корутины</span>
+            <span class="chip">Animator</span><span class="chip">Blender → Unity</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <h3>«Стрелочный Лабиринт — Созвездия» (Arrow Maze)</h3>
+          <div class="proj-meta">HTML5 Canvas · Vanilla JS · Web Audio API — личный проект, 2026 · <a href="https://neckrite.github.io/resume-gamedev/projects/arrow-maze/">играть онлайн</a></div>
+          <ul>
+            <li>Полноценная игра-головоломка в одном HTML-файле (~4 400 строк, без движка и библиотек): поле заполнено «змейками»-стрелками, каждая скользит по своему направлению — цель выпустить их за край поля.</li>
+            <li>Процедурная генерация уровней (15×15 / 18×18 / 20×20) со встроенным солвером: каждый уровень гарантированно решаем.</li>
+            <li>Игровая экономика: монеты, самоцветы, магазин, заклинания, 4 сердца, таймер, 12+ достижений с прогрессом, карта прогрессии «Созвездия».</li>
+            <li>10 тем оформления на CSS Custom Properties и анимированные canvas-фоны (звёздное небо, лава, неон).</li>
+            <li>Саундтрек и SFX синтезируются в реальном времени на Web Audio API — без аудиофайлов; сохранения в localStorage.</li>
+          </ul>
+          <div class="stack">
+            <span class="chip">HTML5 Canvas</span><span class="chip">Vanilla JS</span>
+            <span class="chip">Web Audio API</span><span class="chip">CSS Custom Properties</span>
+            <span class="chip">localStorage</span><span class="chip">Играбельно онлайн</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <h3>Автоматизация сборки 2D-игры (CLI / CI)</h3>
+          <div class="proj-meta">Unity · C# · Git — лабораторный проект АРПО, 2026</div>
+          <ul>
+            <li>Editor-скрипт BuildManager.cs: программная сборка WebGL через BuildPipeline.BuildPlayer() с проверкой сцен, обработкой ошибок и кодами возврата.</li>
+            <li>Headless-сборка из терминала: Unity -batchmode -nographics -executeMethod (успешная сборка ~11 сек, 17.2 МБ) с разбором логов.</li>
+            <li>Git-флоу: ветки main / LR1, осмысленные коммиты, Pull Request с ревью и слиянием.</li>
+          </ul>
+          <div class="stack">
+            <span class="chip">BuildPipeline</span><span class="chip">Unity CLI / batchmode</span>
+            <span class="chip">WebGL</span><span class="chip">Git · Pull Request</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <h3>Звук для игр: рингтон и игровой саундтрек</h3>
+          <div class="proj-meta">Audacity · FL Studio — дисциплина «Создание и обработка звука», 2026</div>
+          <ul>
+            <li>Рингтон в Audacity: двухтрековый проект, мастеринг (компрессор, эквализация, реверберация), экспорт в MP3/AAC.</li>
+            <li>Саундтрек для компьютерной игры в FL Studio: MIDI-мелодия, VST-инструменты, сведение и мастеринг (Hardcore, Fruity Limiter).</li>
+            <li>Постобработка записей: коррекция шипящих, эхо, анализ осциллограммы и спектрограммы, форматы WAV/MP3.</li>
+          </ul>
+          <div class="stack">
+            <span class="chip">Audacity</span><span class="chip">FL Studio</span>
+            <span class="chip">MIDI / VST</span><span class="chip">Сведение и мастеринг</span>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <aside>
+
+      <div class="side-block edu">
+        <h2>Образование</h2>
+        <b>Полоцкий государственный университет имени Евфросинии Полоцкой</b>
+        <div class="edu-text">Факультет информационных технологий, кафедра вычислительных систем и сетей</div>
+        <div class="meta">Группа 23-СТ · 2023 — 2027 (4 курс)</div>
+        <div class="note">Профильные дисциплины: трёхмерное моделирование, создание и обработка звука, автоматизация разработки ПО.</div>
+      </div>
+
+      <div class="side-block">
+        <h2>Навыки</h2>
+        <div class="skill-group">
+          <b>Геймдев</b>
+          <div class="skills">
+            <span class="chip">Unity 6 (URP)</span><span class="chip">C#</span>
+            <span class="chip">Геймплей-логика</span><span class="chip">Корутины</span>
+            <span class="chip">Animator</span><span class="chip">Триггеры / физика</span>
+            <span class="chip">Editor-скрипты</span><span class="chip">BuildPipeline</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <b>3D (Blender)</b>
+          <div class="skills">
+            <span class="chip">Моделирование</span><span class="chip">UV-развёртка</span>
+            <span class="chip">PBR-материалы</span><span class="chip">Экспорт в движок</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <b>Звук</b>
+          <div class="skills">
+            <span class="chip">Audacity</span><span class="chip">FL Studio</span>
+            <span class="chip">MIDI / VST</span><span class="chip">Мастеринг</span>
+            <span class="chip">SFX</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <b>Веб-игры</b>
+          <div class="skills">
+            <span class="chip">JavaScript</span><span class="chip">HTML5 Canvas</span>
+            <span class="chip">Web Audio API</span><span class="chip">CSS Custom Properties</span>
+            <span class="chip">localStorage</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <b>Инструменты</b>
+          <div class="skills">
+            <span class="chip">Git / GitHub</span><span class="chip">GitHub CLI</span>
+            <span class="chip">Unity CLI</span><span class="chip">PowerShell</span>
+            <span class="chip">Python (базово)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-block">
+        <h2>Языки</h2>
+        <div class="lang-row"><span>Русский</span><span>родной</span></div>
+      </div>
+
+    </aside>
+  </div>
+
+  <footer>
+    <span>Инченко Никита Вадимович — инженер-программист (GameDev)</span>
+    <span>Обновлено: сентябрь 2026 · <a href="https://github.com/Neckrite">GitHub</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
